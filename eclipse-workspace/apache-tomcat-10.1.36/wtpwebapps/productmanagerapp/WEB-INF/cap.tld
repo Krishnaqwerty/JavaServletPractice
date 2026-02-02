@@ -1,0 +1,16 @@
+<taglib xmlns = "jakarta.ee" version="3.0">
+
+<tlib-version>1.0</tlib-version>
+
+<short-name>Cap</short-name>
+
+<tag>
+
+<name>Cap</name>
+<tag-class>com.productmanagerapp.tags.Cap</tag-class>
+
+<body-content>Scriptless</body-content>
+
+</tag>
+
+</taglib>
