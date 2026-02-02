@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Users</title>
+</head>
+
+<body>
+<table>
+
+<tr>
+<th>ID</th>
+<th>USERNAME</th>
+<th>Password</th>
+
+</tr>
+
+
+<tr th:each = "p : ${userList}">
+
+<td th:text = "${p.id}"></td>
+<td th:text = "${p.username}"></td>
+<td th:text = "${p.password}"></td>
+
+</tr>
+
+
+</table>
+
+
+</body>
+
+</html>
