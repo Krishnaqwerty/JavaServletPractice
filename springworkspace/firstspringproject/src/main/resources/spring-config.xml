@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+		
+		
+	
+	
+	<context:component-scan base-package="com.firstspringproject.service" />
+	<context:component-scan base-package="com.firstspringproject.dao" />
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://localhost:3306/springdb" />
+			<property name="username" value="root"/>
+			<property name="password" value="root@39"/>
+	</bean>
+	
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="dataSource" />
+	
+	</bean>
+	
+	
+	
+
+	<bean id="greetService" class="com.firstspringproject.service.GreetService" >  
+		
+	</bean>
+	
+	
+	
+	<bean id="emailConfig" class="com.firstspringproject.service.EmailConfig" >  
+	
+	<constructor-arg value="1.1.1.1" />
+	<constructor-arg value="ab34k2" />
+	
+		
+	</bean>
+	
+	
+	
+	<bean id="emailService" class="com.firstspringproject.service.EmailService" >  
+	
+	
+	<property name="info" ref="emailConfig"/>
+		
+	</bean>
+	
+	<bean id="orderService" class="com.firstspringproject.service.OrderService" >  
+	
+	<property name="esp" ref="emailService"/>
+	
+		
+	</bean>
+	
+	
+	
+	<bean id="product" class = "com.firstspringproject.model.Product" >
+	
+		<property name="id" value = "P1"/>
+		<property name="name" value = "Mouse"/>
+		<property name="price" value = "1000"/>
+		<property name="colorVariants">
+				
+				<list>
+					
+					<value>White</value>
+					<value>Black</value>
+				
+				</list>
+			
+		
+		</property>
+		
+	
+	</bean>
+	
+</beans>

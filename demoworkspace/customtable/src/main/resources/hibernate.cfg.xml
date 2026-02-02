@@ -1,0 +1,44 @@
+<hibernate-configuration>
+	<session-factory>
+	
+	
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ormdb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root@39</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		
+		<!-- 
+		<mapping class="com.customtable.model.Customer" />
+		<mapping class="com.customtable.model.User" />
+		<mapping class="com.customtable.model.Student" />
+		<mapping class="com.customtable.model.Locker" />
+		 
+		<mapping class="com.customtable.model.Employee" />
+		<mapping class="com.customtable.model.Department" />
+		
+		<mapping class="com.customtable.model.Comment" />
+		<mapping class="com.customtable.model.BlogPost" />
+		
+		
+			<mapping class="com.customtable.model.Participant" />
+		<mapping class="com.customtable.model.Course" />
+		
+		
+		
+		 -->
+		 
+	
+		
+		
+		<mapping class="com.customtable.model.Payment" />
+		<mapping class="com.customtable.model.UPIPayment" />
+		<mapping class="com.customtable.model.CardPayment" />
+		
+
+	</session-factory>
+</hibernate-configuration>
